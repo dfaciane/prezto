@@ -15,6 +15,7 @@ Aliases
   - `brewo` lists brews which have an update available.
   - `brews` searches for a formula.
   - `brewu` updates and upgrades Homebrew packages and formulae.
+  - `brewU` updates and upgrades Homebrew packages and formulae, then runs cleanup and doctor.
   - `brewx` uninstalls a formula.
 
 ### Homebrew Cask
