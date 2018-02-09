@@ -99,9 +99,9 @@ fi
 
 if [[ -d $HOME/.linuxbrew ]]
 then
-    path+=$HOME/.linuxbrew/bin
-    manpath+=$HOME/.linuxbrew/man
-    infopath+=$HOME/.linuxbrew/share/info
+    path=($HOME/.linuxbrew/bin $path)
+    manpath=($HOME/.linuxbrew/man $manpath)
+    infopath=($HOME/.linuxbrew/share/info $infopath)
 fi
 
 #
