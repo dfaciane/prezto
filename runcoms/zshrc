@@ -19,10 +19,33 @@ fi
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# Set paths to something reasonable.
+
+# Function path
 fpath=($HOME/bin /usr/local/bin $fpath)
 
+# Man path 
+manpath=($HOME/man /usr/local/man $manpath)
+
+# Info path
+infopath=($HOME/share/info /usr/local/share/info /usr/share/info $infopath)
+
+# Path
+path=($HOME/bin /usr/local/bin $path)
+
+# Linuxbrew
+if [[ -d $HOME/.linuxbrew ]]
+then
+    path+=$HOME/.linuxbrew/bin
+    manpath+=$HOME/.linuxbrew/man
+    infopath+=$HOME/.linuxbrew/share/info
+fi
+
 # Perlbrew stuff
-source $HOME/perl5/perlbrew/etc/bashrc
+if [[ -d $HOME/perl5/perlbrew ]]
+then
+    source $HOME/perl5/perlbrew/etc/bashrc
+fi
 
 # why would you type 'cd dir' if you could just type 'dir'?
 setopt AUTO_CD
