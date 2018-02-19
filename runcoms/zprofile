@@ -17,15 +17,12 @@ fi
 # Editors
 #
 
-export GIT_EDITOR="emacs"
-export EDITOR='emacs'
-export VISUAL='emacs'
+export EDITOR='emacsclient -t -q -a emacs'
+export GIT_EDITOR=$EDITOR
+export VISUAL=$EDITOR
 export PAGER='less'
 
-alias e='emacsclient -t'
-alias ec='emacsclient -c'
-#alias vim='emacsclient -t'
-#alias vi='emacsclient -t'
+alias ec=$EDITOR
 
 #
 # Language
@@ -190,7 +187,6 @@ bindkey -M vicmd "q" push-line
 
 # it's like, space AND completion.  Gnarlbot.
 bindkey -M viins ' ' magic-space
-
 
 alias ls="ls -F"
 alias grep=egrep
