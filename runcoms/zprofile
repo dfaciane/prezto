@@ -16,8 +16,8 @@ fi
 #
 # Editors
 #
-
-export EDITOR='emacsclient -t -q -a emacs'
+export EDITOR='emacsclient -c -t -q'
+export ALTERNATE_EDITOR=
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 export PAGER='less'
