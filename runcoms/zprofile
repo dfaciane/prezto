@@ -47,12 +47,13 @@ fi
 #
 
 # Ensure path arrays do not contain duplicates.
-typeset -gU cdpath fpath mailpath manpath infopath path
+typeset -T LD_LIBRARY_PATH ld_library_path :
+typeset -gU cdpath fpath mailpath manpath infopath path ld_library_path
 
 # Set the list of directories that cd searches.
-# cdpath=(
-#   $cdpath
-# )
+cdpath=(
+     $cdpath
+)
 
 # Set the list of directories that Zsh searches for programs.
 path=(
@@ -130,27 +131,34 @@ alias more=less
 alias grep=egrep
 
 #
-# Linuxbrew
-#
-if [[ -d $HOME/.linuxbrew ]]
-then
-    path=($HOME/.linuxbrew/bin $path)
-    manpath=($HOME/.linuxbrew/man $manpath)
-    infopath=($HOME/.linuxbrew/share/info $infopath)
-fi
-
-#
 # Perlbrew
 #
-if [[ -d $HOME/perl5/perlbrew ]]
+if [ -d $HOME/perl5/perlbrew ]
 then
     source $HOME/perl5/perlbrew/etc/bashrc
 fi
 
 #
+# Linuxbrew
+#
+LINUXBREW_HOME_ALT=/home/linuxbrew/.linuxbrew
+LINUXBREW_HOME=/home/.linuxbrew
+if [ -d $LINUXBREW_HOME ]
+then
+    path=($LINUXBREW_HOME/bin $path)
+    manpath=($LINUXBREW_HOME/share/man $manpath)
+    infopath=($LINUXBREW_HOME/share/info $infopath)
+elif [ -d $LINUXBREW_HOME_ALT ]
+then
+    LINUXBREW_HOME=$LINUXBREW_HOME_ALT
+    path=($LINUXBREW_HOME/bin $path)
+    manpath=($LINUXBREW_HOME/share/man $manpath)
+    infopath=($LINUXBREW_HOME/share/info $infopath)
+fi
+
+#
 # setopts
 #
-
 # why would you type 'cd dir' if you could just type 'dir'?
 setopt AUTO_CD
 
@@ -228,3 +236,5 @@ bindkey '\e[4~' end-of-line
 alias ls="ls -F"
 
 #[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+export PATH="/home/dfaciane/.linuxbrew/bin:$PATH"
