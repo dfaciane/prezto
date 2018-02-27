@@ -16,12 +16,22 @@ fi
 #
 # Editors
 #
-export EDITOR='emacsclient -c -t -q'
+
+alias e='emacsclient -q -a emacs'
+EDITOR=emacsclient
 export ALTERNATE_EDITOR=
+
+#function e {
+#    tmux new-window -a -n "emacs" "$EDITOR $@"
+#}
+
+#function ee {
+#    tmux split-window "$EDITOR $@"
+#}
+
+
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
-export PAGER='less'
-
 alias ec=$EDITOR
 
 #
@@ -73,6 +83,28 @@ infopath=(
   $infopath
 )
 
+#
+# persistent ssh session with tmux
+#
+function rtmux {
+  case "$2" in
+    "") autossh -M 0 $1 -t "zsh -c 'if tmux -qu has; then tmux -qu attach; else EDITOR=vim tmux -qu new; fi'";;
+    *) autossh -M 0 $1 -t "zsh -c 'if tmux -qu has -t $2; then tmux -qu attach -t $2; else EDITOR=vim tmux -qu new -s $2; fi'";;
+  esac
+}
+
+# split window in two and run command
+function tmw {
+    tmux split-window -dh "$*"
+}
+
+#
+# tmuxinator
+#
+if [[ - f $HOME/.bin/tmuxinator.zsh ]] ; then
+   source $HOME/.bin/tmuxinator.zsh
+fi
+
 
 #
 # Less
@@ -89,6 +121,16 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
+
+export PAGER='less'
+alias more=less
+
+#
+# Grep
+#
+
+alias grep=egrep
+
 
 #
 # Linuxbrew
@@ -189,4 +231,5 @@ bindkey -M vicmd "q" push-line
 bindkey -M viins ' ' magic-space
 
 alias ls="ls -F"
-alias grep=egrep
+
+  [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
