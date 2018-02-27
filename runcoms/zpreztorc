@@ -16,30 +16,17 @@
 zstyle ':prezto:*:*' color 'yes'
 
 # Add additional directories to load prezto modules from
-# zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
+zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
 
 # Set the Zsh modules to load (man zshmodules).
-# zstyle ':prezto:load' zmodule 'attr' 'stat'
+zstyle ':prezto:load' zmodule 'attr' 'stat'
 
 # Set the Zsh functions to load (man zshcontrib).
-# zstyle ':prezto:load' zfunction 'zargs' 'zmv'
+zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
-#zstyle  ':prezto:load' pmodule \
-  # 'environment' \
-  # 'terminal' \
-  # 'editor' \
-  # 'history' \
-  # 'directory' \
-  # 'spectrum' \
-  # 'utility' \
-  # 'completion' \
-  # 'autosuggestions' \
-  # 'prompt'
-
 zstyle ':prezto:load' pmodule \
-  'mime-setup' \
   'environment' \
   'archive' \
   'terminal' \
@@ -60,7 +47,6 @@ zstyle ':prezto:load' pmodule \
   'perl' \
   'python' \
   'wakeonlan' \
-  'autoenv' \
   'prompt' \
   'syntax-highlighting' \
   'history-substring-search' \
@@ -71,15 +57,15 @@ zstyle ':prezto:load' pmodule \
 #
 
 # Set the query found color.
-# zstyle ':prezto:module:autosuggestions:color' found ''
-
+zstyle ':prezto:module:autosuggestions:color' found 'fg=14'
+zstyle ':prezto:module:autosuggestions' color 'yes'
 #
 # Completions
 #
 
 # Set the entries to ignore in static */etc/hosts* for host completion.
-# zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
-#   '0.0.0.0' '127.0.0.1'
+zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
+   '0.0.0.0' '127.0.0.1'
 
 #
 # Editor
@@ -89,7 +75,7 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Auto convert .... to ../..
-# zstyle ':prezto:module:editor' dot-expansion 'yes'
+zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 #
 # Git
@@ -139,7 +125,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'dave'
 
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)

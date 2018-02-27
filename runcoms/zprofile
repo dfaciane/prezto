@@ -101,7 +101,7 @@ function tmw {
 #
 # tmuxinator
 #
-if [[ - f $HOME/.bin/tmuxinator.zsh ]] ; then
+if [ -f $HOME/.bin/tmuxinator.zsh ] ; then
    source $HOME/.bin/tmuxinator.zsh
 fi
 
