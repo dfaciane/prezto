@@ -47,8 +47,9 @@ fi
 #
 
 # Ensure path arrays do not contain duplicates.
-typeset -T LD_LIBRARY_PATH ld_library_path :
-typeset -gU cdpath fpath mailpath manpath infopath path ld_library_path
+export LD_LIBRARY_PATH=$HOME/lib:$HOME/.local/lib
+typeset -T LD_LIBRARY_PATH ld_library_path
+typeset -U ld_libraray_path cdpath fpath mailpath manpath infopath path
 
 # Set the list of directories that cd searches.
 cdpath=(
@@ -57,8 +58,10 @@ cdpath=(
 
 # Set the list of directories that Zsh searches for programs.
 path=(
-  $HOME/bin
+  $HOME/{bin,sbin}
   /usr/local/{bin,sbin}
+  /usr/{bin,sbin}
+  /{bin,sbin}
   $path
 )
 
@@ -72,6 +75,8 @@ fpath=(
 # Man path
 manpath=(
   $HOME/man
+  $HOME/share/man
+  /usr/local/share/man
   /usr/local/man
   $manpath
 )
@@ -137,6 +142,7 @@ if [ -d $HOME/perl5/perlbrew ]
 then
     source $HOME/perl5/perlbrew/etc/bashrc
 fi
+export PATH MANPATH INFOPATH
 
 #
 # Linuxbrew
@@ -155,6 +161,8 @@ then
     manpath=($LINUXBREW_HOME/share/man $manpath)
     infopath=($LINUXBREW_HOME/share/info $infopath)
 fi
+
+export PATH MANPATH INFOPATH
 
 #
 # setopts
@@ -185,10 +193,10 @@ setopt PUSHD_TO_HOME
 setopt PUSHD_IGNORE_DUPS
 
 # 10 second wait if you do something that will delete everything.  I wish I'd had this before...
-setopt RM_STAR_WAIT
+#setopt RM_STAR_WAIT
 
 # use magic (this is default, but it can't hurt!)
-#setopt ZLE
+setopt ZLE
 
 setopt NO_HUP
 
@@ -213,28 +221,8 @@ setopt EXTENDED_GLOB
 # (that is, frew${cool}frew has frew surrounding all the variables, not just first and last
 setopt RC_EXPAND_PARAM
 
-# Who doesn't want home and end to work?
-bindkey '\e[1~' beginning-of-line
-bindkey '\e[4~' end-of-line
-
-# Incremental search is elite!
-#bindkey -M vicmd "/" history-incremental-search-backward
-#bindkey -M vicmd "?" history-incremental-search-forward
-
-# Search based on what you typed in already
-#bindkey -M vicmd "//" history-beginning-search-backward
-#bindkey -M vicmd "??" history-beginning-search-forward
-
-#bindkey "\eOP" run-help
-
-# oh wow!  This is killer...  try it!
-#bindkey -M vicmd "q" push-line
-
-# it's like, space AND completion.  Gnarlbot.
-#bindkey -M viins ' ' magic-space
-
 alias ls="ls -F"
 
 #[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-export PATH="/home/dfaciane/.linuxbrew/bin:$PATH"
+export LD_LIBRARAY_PATH CDPATH FPATH MAILPATH MANPATH INFOPATH PATH
