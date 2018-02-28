@@ -175,7 +175,7 @@ setopt GLOB_COMPLETE
 #setopt RM_STAR_WAIT
 
 # use magic (this is default, but it can't hurt!)
-setopt ZLE
+#setopt ZLE
 
 setopt NO_HUP
 
