@@ -30,7 +30,6 @@ zstyle ':prezto:load' pmodule \
   'environment' \
   'archive' \
   'terminal' \
-  'editor' \
   'history' \
   'homebrew' \
   'directory' \
@@ -41,16 +40,38 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'command-not-found' \
   'tmux' \
-  'node' \
-  'osx' \
-  'ruby' \
-  'perl' \
-  'python' \
   'wakeonlan' \
   'prompt' \
   'syntax-highlighting' \
   'history-substring-search' \
   'autosuggestions' \
+
+
+# zstyle ':prezto:load' pmodule \
+#   'environment' \
+#   'archive' \
+#   'terminal' \
+#   'editor' \
+#   'history' \
+#   'homebrew' \
+#   'directory' \
+#   'spectrum' \
+#   'utility' \
+#   'completion' \
+#   'fasd' \
+#   'git' \
+#   'command-not-found' \
+#   'tmux' \
+#   'node' \
+#   'osx' \
+#   'ruby' \
+#   'perl' \
+#   'python' \
+#   'wakeonlan' \
+#   'prompt' \
+#   'syntax-highlighting' \
+#   'history-substring-search' \
+#   'autosuggestions' \
 
 #
 # Autosuggestions
