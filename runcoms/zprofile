@@ -193,6 +193,7 @@ setopt NUMERIC_GLOB_SORT
 setopt RC_EXPAND_PARAM
 
 alias ls="ls -F"
+alias btc="bitcoin-cli"
 
 #[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
