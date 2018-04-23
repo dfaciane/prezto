@@ -29,7 +29,6 @@ export ALTERNATE_EDITOR=
 #    tmux split-window "$EDITOR $@"
 #}
 
-
 #export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 #alias ec=$EDITOR
