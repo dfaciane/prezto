@@ -18,7 +18,7 @@ fi
 #
 
 alias e='emacsclient -q -a emacs'
-EDITOR=emacsclient
+EDITOR=emacs
 export ALTERNATE_EDITOR=
 
 #function e {
@@ -30,9 +30,9 @@ export ALTERNATE_EDITOR=
 #}
 
 
-export GIT_EDITOR=$EDITOR
+#export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
-alias ec=$EDITOR
+#alias ec=$EDITOR
 
 #
 # Language
@@ -171,21 +171,12 @@ export PATH MANPATH INFOPATH
 # If we have a glob this will expand it
 setopt GLOB_COMPLETE
 
-# 10 second wait if you do something that will delete everything.  I wish I'd had this before...
-#setopt RM_STAR_WAIT
-
 # use magic (this is default, but it can't hurt!)
 #setopt ZLE
 
 setopt NO_HUP
 
 # setopt IGNORE_EOF
-
-# If I could disable Ctrl-s completely I would!
-setopt NO_FLOW_CONTROL
-
-# Case insensitive globbing
-setopt NO_CASE_GLOB
 
 # Be Reasonable!
 setopt NUMERIC_GLOB_SORT
@@ -199,3 +190,4 @@ alias ls="ls -F"
 #[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 export LD_LIBRARAY_PATH CDPATH FPATH MAILPATH MANPATH INFOPATH PATH
+export PATH="/home/dfaciane/.linuxbrew/bin:$PATH"
