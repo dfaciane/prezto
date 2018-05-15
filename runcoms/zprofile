@@ -145,6 +145,8 @@ alias grep=egrep
 #
 PATH=/usr/local/share/python:$PATH
 PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+# setup autoenv
+# source $HOME/.autoenv/activate.sh
 
 #
 # Perlbrew
