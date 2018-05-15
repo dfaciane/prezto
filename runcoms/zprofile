@@ -144,7 +144,15 @@ alias grep=egrep
 # Python
 #
 PATH=/usr/local/share/python:$PATH
-PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+
+# If this is a Mac, then do additional setup
+if [[ $(uname) == Darwin ]] ; then
+  PATH=$HOME/Library/Python/2.7/bin:$PATH
+fi
+
+PYTHONPATH=/usr/local/lib/python:/Library/Python/2.7/site-packages:$PYTHONPATH
+
+
 # setup autoenv
 # source $HOME/.autoenv/activate.sh
 
