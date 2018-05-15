@@ -196,3 +196,4 @@ alias btc="bitcoin-cli"
 
 PATH="/home/dfaciane/bin:$PATH"
 export LD_LIBRARAY_PATH CDPATH FPATH MAILPATH MANPATH INFOPATH PATH
+export PYTHONPATH
