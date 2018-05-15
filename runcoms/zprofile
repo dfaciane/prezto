@@ -10,7 +10,7 @@
 #
 
 if [[ "$OSTYPE" == darwin* ]]; then
-  export BROWSER='open'
+   export BROWSER='open'
 fi
 
 #
@@ -19,7 +19,7 @@ fi
 
 alias e='emacsclient -q -a emacs'
 EDITOR=emacs
-export ALTERNATE_EDITOR=
+ALTERNATE_EDITOR=
 
 #function e {
 #    tmux new-window -a -n "emacs" "$EDITOR $@"
@@ -29,9 +29,11 @@ export ALTERNATE_EDITOR=
 #    tmux split-window "$EDITOR $@"
 #}
 
-#export GIT_EDITOR=$EDITOR
-export VISUAL=$EDITOR
-#alias ec=$EDITOR
+GIT_EDITOR=$EDITOR
+VISUAL=$EDITOR
+alias e=$EDITOR
+
+export VISUAL EDITOR GIT_EDITOR ALTERNATE_EDITOR
 
 #
 # Language
@@ -46,7 +48,7 @@ fi
 #
 
 # Ensure path arrays do not contain duplicates.
-export LD_LIBRARY_PATH=$HOME/lib:$HOME/.local/lib
+LD_LIBRARY_PATH=$HOME/lib:$HOME/.local/lib
 typeset -T LD_LIBRARY_PATH ld_library_path
 typeset -U ld_libraray_path cdpath fpath mailpath manpath infopath path
 
@@ -135,13 +137,18 @@ alias more=less
 alias grep=egrep
 
 #
+# Python
+#
+PATH=/usr/local/share/python:$PATH
+PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+
+#
 # Perlbrew
 #
 if [ -d $HOME/perl5/perlbrew ]
 then
     source $HOME/perl5/perlbrew/etc/bashrc
 fi
-export PATH MANPATH INFOPATH
 
 #
 # Linuxbrew
@@ -160,8 +167,6 @@ then
     manpath=($LINUXBREW_HOME/share/man $manpath)
     infopath=($LINUXBREW_HOME/share/info $infopath)
 fi
-
-export PATH MANPATH INFOPATH
 
 #
 # setopts
@@ -189,5 +194,5 @@ alias btc="bitcoin-cli"
 
 #[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+PATH="/home/dfaciane/bin:$PATH"
 export LD_LIBRARAY_PATH CDPATH FPATH MAILPATH MANPATH INFOPATH PATH
-export PATH="/home/dfaciane/bin:$PATH"
