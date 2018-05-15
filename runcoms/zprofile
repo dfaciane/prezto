@@ -152,6 +152,9 @@ fi
 
 PYTHONPATH=/usr/local/lib/python:/Library/Python/2.7/site-packages:$PYTHONPATH
 
+# Don't leave behind bytecode files (.pyc)
+export PYTHONDONTWRITEBYTECODE=1
+
 
 # setup autoenv
 # source $HOME/.autoenv/activate.sh
