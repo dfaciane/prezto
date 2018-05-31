@@ -143,14 +143,31 @@ alias grep=egrep
 #
 # Python
 #
-PATH=/usr/local/share/python:$PATH
+#PATH=/usr/local/share/python:$PATH
+PYTHONPATH=/usr/local/lib/python:/Library/Python/2.7/site-packages:/Library/Python/3.6/site-packages:$PYTHONPATH
 
 # If this is a Mac, then do additional setup
 if [[ $(uname) == Darwin ]] ; then
-  PATH=$HOME/Library/Python/2.7/bin:$PATH
-fi
 
-PYTHONPATH=/usr/local/lib/python:/Library/Python/2.7/site-packages:$PYTHONPATH
+    if [[ -d $HOME/Library/Python/2.7/bin ]] ; then
+        PATH="$HOME/Library/Python/2.7/bin:$PATH"
+    fi
+
+    if [[ -d $HOME/Library/Python/3.6/bin ]] ; then
+        PATH="$HOME/Library/Python/3.6/bin:$PATH"
+    fi
+
+    ANACONDA="/usr/local/anaconda3"
+    if [[ -d $ANACONDA/bin ]] ; then
+        PATH="$ANACONDA/bin:$PATH"
+    fi
+
+    if [[ -d $ANACONDA/lib ]] ; then
+        LD_LIBRARY_PATH="$ANACONDA/lib:$LD_LIBRARY_PATH"
+    fi
+
+
+fi
 
 
 # setup autoenv
