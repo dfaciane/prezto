@@ -18,10 +18,10 @@
 [[ -o INTERACTIVE && -t 2 ]] && {
 
   # Print system info
-  if (( $+commands[neofetch] )); then
-    neofetch
-    print
-  fi
+#  if (( $+commands[neofetch] )); then
+#    neofetch
+#    print
+#  fi
 
   # Print a random, hopefully interesting, adage.
   if (( $+commands[fortune] )); then
