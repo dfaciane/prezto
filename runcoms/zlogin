@@ -17,6 +17,12 @@
 # Execute code only if STDERR is bound to a TTY.
 [[ -o INTERACTIVE && -t 2 ]] && {
 
+   # override default colors
+   export LSCOLORS='ExGxBxDxCxEgEdxbxgxcxd' # ls colors like in Linux
+   # used https://geoff.greer.fm/lscolors/ to convert them to LS_COLORS:
+   export LS_COLORS='di=1;34:ln=1;36:so=1;31:pi=1;33:ex=1;32:bd=1;34;46:cd=1;34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43'
+   zstyle ':completion:*:default' list-colors "$LS_COLORS"
+
   # Print system info
 #  if (( $+commands[neofetch] )); then
 #    neofetch
