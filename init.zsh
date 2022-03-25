@@ -191,4 +191,7 @@ pmodload "$pmodules[@]"
 unset pmodules
 
 export ZPLUG_HOME=/opt/homebrew/opt/zplug/
-source $ZPLUG_HOME/init.zsh
+if [ -f $ZPLUG_HOME/init.zsh ]
+then
+    source $ZPLUG_HOME/init.zsh
+fi
