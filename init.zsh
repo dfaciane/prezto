@@ -189,3 +189,6 @@ unset zfunction{s,}
 zstyle -a ':prezto:load' pmodule 'pmodules'
 pmodload "$pmodules[@]"
 unset pmodules
+
+export ZPLUG_HOME=/opt/homebrew/opt/zplug/
+source $ZPLUG_HOME/init.zsh
