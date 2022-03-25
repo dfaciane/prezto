@@ -244,7 +244,18 @@ alias btc="bitcoin-cli"
 
 #[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-PATH="/home/dfaciane/bin:$PATH"
+# add home directory to PATH
+if [ -d $HOME/bin ]
+then
+   PATH="$HOME/bin:$PATH"
+fi
+
+# add local rbenv to PATH
+if [ -d $HOME/.rbenv/bin ]
+then
+   PATH="$HOME/.rbenv/bin:$PATH"
+fi
+
 export LD_LIBRARY_PATH CDPATH FPATH MAILPATH MANPATH INFOPATH PATH
 export PYTHONPATH
 
