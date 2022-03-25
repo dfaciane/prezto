@@ -48,7 +48,7 @@ fi
 #
 
 # Ensure path arrays do not contain duplicates.
-LD_LIBRARY_PATH=$HOME/.local/lib:$HOME/lib
+LD_LIBRARY_PATH=$HOME/.local/lib:$HOME/lib:/usr/lib:/usr/local/lib:.
 typeset -T LD_LIBRARY_PATH ld_library_path
 typeset -U ld_libraray_path cdpath fpath mailpath manpath infopath path
 
@@ -229,7 +229,7 @@ alias btc="bitcoin-cli"
 #[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 PATH="/home/dfaciane/bin:$PATH"
-export LD_LIBRARAY_PATH CDPATH FPATH MAILPATH MANPATH INFOPATH PATH
+export LD_LIBRARY_PATH CDPATH FPATH MAILPATH MANPATH INFOPATH PATH
 export PYTHONPATH
 
 # Unicode support
