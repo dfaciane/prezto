@@ -48,7 +48,7 @@ fi
 #
 
 # Ensure path arrays do not contain duplicates.
-LD_LIBRARY_PATH=$HOME/.local/lib:$HOME/lib
+LD_LIBRARY_PATH=$HOME/.local/lib:$HOME/lib:/usr/lib:/usr/local/lib:.
 typeset -T LD_LIBRARY_PATH ld_library_path
 typeset -U ld_libraray_path cdpath fpath mailpath manpath infopath path
 
@@ -188,7 +188,11 @@ fi
 #
 # Homebrew
 #
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ -f /opt/homebrew/bin/brew ]
+then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+#
 #
 #if [ -d $HOMEBREW_HOME ]
 #then
@@ -240,11 +244,23 @@ alias btc="bitcoin-cli"
 
 #[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+# add home directory to PATH
+if [ -d $HOME/bin ]
+then
+   PATH="$HOME/bin:$PATH"
+fi
+
+# add local rbenv to PATH
+#if [ -d $HOME/.rbenv/bin ]
+#then
+#   PATH="$HOME/.rbenv/bin:$PATH"
+#fi
+
 # rbenv
 eval "$(rbenv init - zsh)"
 
 PATH="$HOME/bin:$PATH"
-export LD_LIBRARAY_PATH CDPATH FPATH MAILPATH MANPATH INFOPATH PATH
+export LD_LIBRARY_PATH CDPATH FPATH MAILPATH MANPATH INFOPATH PATH
 export PYTHONPATH
 
 # Unicode support
