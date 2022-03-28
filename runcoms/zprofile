@@ -240,7 +240,10 @@ alias btc="bitcoin-cli"
 
 #[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-PATH="/home/dfaciane/bin:$PATH"
+# rbenv
+eval "$(rbenv init - zsh)"
+
+PATH="$HOME/bin:$PATH"
 export LD_LIBRARAY_PATH CDPATH FPATH MAILPATH MANPATH INFOPATH PATH
 export PYTHONPATH
 
