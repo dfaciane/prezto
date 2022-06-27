@@ -16,18 +16,8 @@ fi
 #
 # Editors
 #
-
-alias e='emacsclient -q -a emacs'
 EDITOR=emacs
-ALTERNATE_EDITOR=
-
-#function e {
-#    tmux new-window -a -n "emacs" "$EDITOR $@"
-#}
-
-#function ee {
-#    tmux split-window "$EDITOR $@"
-#}
+ALTERNATE_EDITOR=vi
 
 GIT_EDITOR=$EDITOR
 VISUAL=$EDITOR
