@@ -256,3 +256,34 @@ export PYTHONPATH
 
 LC_CTYPE=en_US.UTF-8
 export LC_CTYPE
+
+# COD ELBs
+export cod_qa_east_elb_int="internal-cod-dispatcher-elb-int-01-1415300863.us-east-1.elb.amazonaws.com"
+export cod_qa_east_elb_ext="cod-dispatcher-elb-ext-01-1789376170.us-east-1.elb.amazonaws.com"
+export cod_qa_west_elb_int="internal-cod-dispatcher-elb-int-01-1135222775.us-west-2.elb.amazonaws.com"
+export cod_qa_west_elb_ext="cod-dispatcher-elb-ext-01-1751398403.us-west-2.elb.amazonaws.com"
+
+export cod_prod_east_elb_int="internal-cod-dispatcher-elb-int-01-1110938713.us-east-1.elb.amazonaws.com"
+export cod_prod_east_elb_ext="cod-dispatcher-elb-ext-01-1217334300.us-east-1.elb.amazonaws.com"
+export cod_prod_west_elb_int="internal-cod-dispatcher-elb-int-01-588531051.us-west-2.elb.amazonaws.com"
+export cod_prod_west_elb_ext="cod-dispatcher-elb-ext-01-963272976.us-west-2.elb.amazonaws.com"
+export cod_prod_ireland_elb_int="internal-cod-dispatcher-elb-int-01-418360979.eu-west-1.elb.amazonaws.com"
+export cod_prod_ireland_elb_ext="cod-dispatcher-elb-ext-01-1804788168.eu-west-1.elb.amazonaws.com"
+export cod_prod_singapore_elb_int="internal-cod-dispatcher-elb-int-01-1444012348.ap-southeast-1.elb.amazonaws.com"
+export cod_prod_singapore_elb_ext="cod-dispatcher-elb-ext-01-1091535419.ap-southeast-1.elb.amazonaws.com"
+
+# FOD ELBs
+export fod_qa_east_elb_int="internal-fod-dispatcher-elb-int-01-919939405.us-east-1.elb.amazonaws.com"
+export fod_qa_east_elb_ext="fod-dispatcher-elb-ext-01-1008693467.us-east-1.elb.amazonaws.com"
+export fod_qa_west_elb_int="internal-fod-west-int-elb-00-1150908387.us-west-2.elb.amazonaws.com"
+export fod_qa_west_elb_ext="fod-west-ext-elb-00-1492383208.us-west-2.elb.amazonaws.com"
+
+export fod_prod_east_elb_int="internal-fod-dispatcher-elb-int-00-778810664.us-east-1.elb.amazonaws.com"
+export fod_prod_east_elb_ext="fod-dispatcher-elb-ext-02-1270633448.us-east-1.elb.amazonaws.com"
+export fod_prod_west_elb_int="internal-fod-dispatcher-elb-int-00-1707345524.us-west-2.elb.amazonaws.com"
+export fod_prod_west_elb_ext="fod-dispatcher-elb-ext-02-1487150128.us-west-2.elb.amazonaws.com"
+export fod_prod_ireland_elb_int="internal-fod-dispatcher-elb-int-00-1083057143.eu-west-1.elb.amazonaws.com"
+export fod_prod_ireland_elb_ext="fod-dispatcher-elb-ext-02-1698002398.eu-west-1.elb.amazonaws.com"
+export fod_prod_singapore_elb_int="internal-fod-dispatcher-elb-int-00-1589734560.ap-southeast-1.elb.amazonaws.com"
+export fod_prod_singapore_elb_ext="fod-dispatcher-elb-ext-02-1248921923.ap-southeast-1.elb.amazonaws.com"
+
